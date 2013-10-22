@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using minihackaton.Models;
 
 namespace minihackaton.Controllers
 {
@@ -25,7 +26,30 @@ namespace minihackaton.Controllers
         [HttpPost]
         public ActionResult Create(FormCollection f)
         {
+            string fname = f["firstname"];
+            string lname = f["lastname"];
+            string twitname = f["twittername"];
+
+            TicketModel ticketModel = new TicketModel();
+            User u = new User();
+            u.Firstname = fname;
+            u.Lastname = lname;
+            u.Twitterpic = twitname;
+            int userID = ticketModel.insertUser(u);
+
+            //generate random int
+            Random random = new Random();
+            var i =  random.Next(1000, 10000);
+            string code = twitname.Substring(0, 2) + i.ToString();
+
+            Ticket t = new Ticket();
+            t.FK_Status = 1;
+            t.FK_User = userID;
+            t.Code = code;
+            ticketModel.insertTicket(t);
+
             ViewBag.status = "posted";
+            ViewBag.ticket = code;
             return View();
             //skills per user model aanroepen
 
