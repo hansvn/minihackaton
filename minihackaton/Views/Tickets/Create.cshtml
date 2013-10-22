@@ -3,18 +3,27 @@
     Layout = "../hacklayout.cshtml";
 }
 
-
+<div class="container">
 <h2>Create a ticket</h2>
-<form action="" method="post">
+
+<form action="" method="post" class=".form-groups">
     @ViewBag.status
+    <div class="form-group">
     <label for="txtLirstname" >Firstname</label>
-    <input type="text" id="txtLirstname" name="firstname" />
+    <input type="text" id="txtLirstname" name="firstname" class="form-control" />
+        </div>
+    <div class="form-group">
     <label for="txtLastname" >Lastname</label>
-    <input type="text" id="txtLastname" name="lastname" />
+    <input type="text" id="txtLastname" name="lastname" class="form-control" />
+        </div>
+    <div class="form-group">
     <label for="txtTwittername" >Twittername</label>
-    <input type="text" id="txtTwittername" name="twittername" />
-    <input type="submit" id="btnCreateTicket" value="Create Ticket" />
+    <input type="text" id="txtTwittername" name="twittername" class="form-control" />
+        </div>
+    
+    <input type="submit" class="btn" id="btnCreateTicket" value="Create Ticket" />
 </form>
+</div>
 
 
 
