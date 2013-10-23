@@ -25,6 +25,8 @@ namespace minihackaton.Controllers
         [HttpPost]
         public ActionResult Create(FormCollection f)
         {
+            ViewBag.status = "posted";
+            return View();
             //skills per user model aanroepen
 
             //wegschrijven in skills per user
