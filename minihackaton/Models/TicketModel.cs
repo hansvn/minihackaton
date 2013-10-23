@@ -30,10 +30,15 @@ namespace minihackaton.Models
             dc.SubmitChanges();
         }
 
-        public void insertUser(User p_us)
+        public int insertUser(User p_us)
         {
             dc.Users.InsertOnSubmit(p_us);
             dc.SubmitChanges();
+
+            User result = (from u in dc.Users
+                          where u.Twitterpic == p_us.Twitterpic
+                          select u).Single();
+            return result.Id;
         }
 
         public Ticket checkTicket(Ticket p_ti)

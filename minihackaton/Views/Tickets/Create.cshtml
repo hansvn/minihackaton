@@ -1,19 +1,17 @@
 ﻿@{
     ViewBag.Title = "Create";
+    Layout = "../hacklayout.cshtml";
 }
+
 
 <h2>Create a ticket</h2>
 <form action="" method="post">
-    @ViewBag.status;
+    @ViewBag.status
     <label for="txtLirstname" >Firstname</label>
     <input type="text" id="txtLirstname" name="firstname" />
     <label for="txtLastname" >Lastname</label>
     <input type="text" id="txtLastname" name="lastname" />
     <label for="txtTwittername" >Twittername</label>
-    <input type="text" id="txtTwittername" name="lastname" />
+    <input type="text" id="txtTwittername" name="twittername" />
     <input type="submit" id="btnCreateTicket" value="Create Ticket" />
 </form>
-
-
-
-
