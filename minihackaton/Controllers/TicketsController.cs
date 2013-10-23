@@ -22,6 +22,14 @@ namespace minihackaton.Controllers
             return View();
         }
 
+        [HttpPost]
+        public ActionResult Create(FormCollection f)
+        {
+            //skills per user model aanroepen
+
+            //wegschrijven in skills per user
+        }
+
         // GET: /Check/
         public ActionResult Check()
         {
