@@ -51,7 +51,6 @@ namespace minihackaton.Models
                          select t).Single();
 
             // Execute the query, and change the column values 
-            // you want to change. 
             ticket.FK_Status = 2;
 
             // Submit the changes to the database. 
