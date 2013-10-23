@@ -160,6 +160,7 @@
     <None Include="Models\TicketServiceModelDataContext.dbml.layout">
       <DependentUpon>TicketServiceModelDataContext.dbml</DependentUpon>
     </None>
+    <Content Include="Views\hacklayout.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Attendees\Show.cshtml" />
