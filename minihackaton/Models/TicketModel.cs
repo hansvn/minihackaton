@@ -36,6 +36,14 @@ namespace minihackaton.Models
             dc.SubmitChanges();
         }
 
+        public Ticket checkTicket(Ticket p_ti)
+        {
+            var result = (from t in dc.Tickets
+                          where t.Code == p_ti.Code
+                          select t).Single();
+            return (Ticket)result;
+        }
+
         // GET THE USER ID (niet nodig hier)
         /*public int getUserId(User p_us)
         {
