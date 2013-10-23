@@ -164,7 +164,7 @@ namespace minihackaton.Models
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TOHA2_Statuss_TOHA2_Ticket", Storage="_Tickets", ThisKey="Id", OtherKey="FK_Status")]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Status_Ticket", Storage="_Tickets", ThisKey="Id", OtherKey="FK_Status")]
 		public EntitySet<Ticket> Tickets
 		{
 			get
@@ -326,7 +326,7 @@ namespace minihackaton.Models
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TOHA2_User_TOHA2_Ticket", Storage="_Tickets", ThisKey="Id", OtherKey="FK_User")]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_Ticket", Storage="_Tickets", ThisKey="Id", OtherKey="FK_User")]
 		public EntitySet<Ticket> Tickets
 		{
 			get
@@ -499,7 +499,7 @@ namespace minihackaton.Models
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TOHA2_Statuss_TOHA2_Ticket", Storage="_Status", ThisKey="FK_Status", OtherKey="Id", IsForeignKey=true)]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Status_Ticket", Storage="_Status", ThisKey="FK_Status", OtherKey="Id", IsForeignKey=true)]
 		public Status Status
 		{
 			get
@@ -533,7 +533,7 @@ namespace minihackaton.Models
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TOHA2_User_TOHA2_Ticket", Storage="_User", ThisKey="FK_User", OtherKey="Id", IsForeignKey=true)]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_Ticket", Storage="_User", ThisKey="FK_User", OtherKey="Id", IsForeignKey=true)]
 		public User User
 		{
 			get

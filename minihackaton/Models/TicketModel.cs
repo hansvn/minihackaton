@@ -46,17 +46,13 @@ namespace minihackaton.Models
 
         public bool changeTicketStatus(Ticket p_ti)
         {
-            var query = (from t in dc.Tickets
+            var ticket = (from t in dc.Tickets
                          where t.Code == p_ti.Code
-                         select t);
+                         select t).Single();
 
             // Execute the query, and change the column values 
             // you want to change. 
-            foreach (Ticket t in query)
-            {
-                t.Status = 2;
-                // Insert any additional changes to column values.
-            }
+            ticket.FK_Status = 2;
 
             // Submit the changes to the database. 
             try
