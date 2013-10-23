@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="S_1094Northwind" Class="DataClasses1DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=vser02.corp.khmechelen.be;Initial Catalog=S_1094Northwind;User ID=IMM1094" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="S_1094NorthwindConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="IMM1094.TOHA2_Statusses" Member="Status">
+    <Type Name="Status">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="StatusName" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
+      <Association Name="TOHA2_Statuss_TOHA2_Ticket" Member="Tickets" ThisKey="Id" OtherKey="FK_Status" Type="Ticket" />
+    </Type>
+  </Table>
+  <Table Name="IMM1094.TOHA2_Users" Member="Users">
+    <Type Name="User">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Firstname" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="Lastname" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Twitterpic" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Association Name="TOHA2_User_TOHA2_Ticket" Member="Tickets" ThisKey="Id" OtherKey="FK_User" Type="Ticket" />
+    </Type>
+  </Table>
+  <Table Name="IMM1094.TOHA2_Tickets" Member="Tickets">
+    <Type Name="Ticket">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Code" Type="System.String" DbType="NChar(6) NOT NULL" CanBeNull="false" />
+      <Column Name="FK_Status" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FK_User" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="TOHA2_Statuss_TOHA2_Ticket" Member="Status" ThisKey="FK_Status" OtherKey="Id" Type="Status" IsForeignKey="true" />
+      <Association Name="TOHA2_User_TOHA2_Ticket" Member="User" ThisKey="FK_User" OtherKey="Id" Type="User" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>
