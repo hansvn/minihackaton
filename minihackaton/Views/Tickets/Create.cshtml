@@ -15,3 +15,5 @@
     <input type="text" id="txtTwittername" name="twittername" />
     <input type="submit" id="btnCreateTicket" value="Create Ticket" />
 </form>
+
+@if(ViewBag.status == "posted") { @ViewBag.ticket }

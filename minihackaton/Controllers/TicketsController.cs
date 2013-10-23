@@ -40,7 +40,7 @@ namespace minihackaton.Controllers
             //generate random int
             Random random = new Random();
             var i =  random.Next(1000, 10000);
-            string code = twitname.Substring(0, 4) + i.ToString();
+            string code = twitname.Substring(0, 2) + i.ToString();
 
             Ticket t = new Ticket();
             t.FK_Status = 1;
