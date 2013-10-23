@@ -109,6 +109,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\AttendeesController.cs" />
     <Compile Include="Controllers\TicketsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -159,6 +160,9 @@
     <None Include="Models\TicketServiceModelDataContext.dbml.layout">
       <DependentUpon>TicketServiceModelDataContext.dbml</DependentUpon>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Attendees\Show.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
