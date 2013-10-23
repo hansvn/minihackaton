@@ -25,4 +25,6 @@
 </form>
 </div>
 
-@if(ViewBag.status == "posted") { @ViewBag.ticket }
+@if(ViewBag.status == "posted") { @ViewBag.ticket
+<img src="http://chart.apis.google.com/chart?cht=qr&chl=@ViewBag.ticket&chs=120x120" alt="Your qr code" />
+}
