@@ -44,6 +44,34 @@ namespace minihackaton.Models
             return (Ticket)result;
         }
 
+        public bool changeTicketStatus(Ticket p_ti)
+        {
+            var query = (from t in dc.Tickets
+                         where t.Code == p_ti.Code
+                         select t);
+
+            // Execute the query, and change the column values 
+            // you want to change. 
+            foreach (Ticket t in query)
+            {
+                t.Status = 2;
+                // Insert any additional changes to column values.
+            }
+
+            // Submit the changes to the database. 
+            try
+            {
+                dc.SubmitChanges();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                return false;
+            }
+
+            return true;
+        }
+
         // GET THE USER ID (niet nodig hier)
         /*public int getUserId(User p_us)
         {
