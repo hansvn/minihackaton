@@ -49,6 +49,7 @@ namespace minihackaton.Controllers
             ticketModel.insertTicket(t);
 
             ViewBag.status = "posted";
+            ViewBag.ticket = code;
             return View();
             //skills per user model aanroepen
 
